@@ -1,0 +1,67 @@
+.container-fluid{
+    background-color:#cfeea0;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0,0,0,0.08) 0px 1px 8px;
+    padding: 16px;
+    min-height: 900px;
+
+}
+.sidebar{
+    background-color:#b2e469;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0,0,0,0.08) 0px 1px 8px;
+    padding-top: 10px;
+    padding-left:40px ;
+    padding-bottom: 5px;
+    padding-right:40px;;
+    text-align: center;
+    text-size-adjust: 10px;
+    box-sizing: border-box;
+    min-height: 900px;
+    
+}
+ .dropdown-toggle{
+    text-align: center ;
+    font-size: 15px;
+    min-height: 200px;
+    
+}
+.item-text{
+    padding: 10px;
+    background-color: rgb(12, 134, 18);
+    color: white;
+    border-radius: 0.3rem;
+    text-align: center;
+
+}
+.nav-item{
+    text-align: center;
+    font-size: 15px;
+    border-radius: 0.7rem;
+    
+}
+.active{
+    background-color: rgb(12, 134, 18);
+    border-color: rgb(12, 134, 18); 
+}
+.main-content{
+    background-color: #b2e469;
+    padding:16px ;
+    margin-left:0px;
+    border-radius: 0.3rem;
+}
+.right-bar{
+    column-width: auto;
+    background-color:#b2e469 ;
+    padding-top: 10px;
+    padding-left:40px ;
+    padding-bottom: 20px;
+    padding-right: 40px;;
+    min-height: 900px;
+}
+.card-header{
+    background-color: rgb(202, 229, 255);
+    padding:10px ;
+    min-width: 200px;
+    
+}
