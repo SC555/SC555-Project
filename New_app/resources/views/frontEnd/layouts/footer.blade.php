@@ -23,45 +23,13 @@
         </div>
     </div>
 
-    <div class="footer-widget">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="single-widget text-center">
-                        <h2>Service</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="{{url('/about')}}">About Us</a></li>
-                        </ul>
-                    </div> 
-                </div>
-                <div class="col-sm-3">
-                     <div class="single-widget">
-                        <h2>Quick Shop</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="{{url('/list-products')}}">Minor crops</a></li>
-<!--                            <li><a href="#">Products</a></li>-->
-                        </ul>
-                    </div> 
-                </div>
-                <div class="col-sm-6">
-                 
-                   <!-- <div class="single-widget">
-                        <h2>Policies</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-             </div>
-        </div>
-    </div>
+    <
 
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © DSCI pvt.Ltd. All rights reserved.</p>
+           
+                <p class="pull-left">Copyright ©<?php echo date("Y"); ?> DSCI pvt.Ltd. All rights reserved.</p>
                 <p class="pull-right">Designed by <span><a target="_blank" href="#">DSCI group</a></span></p>
             </div>
         </div>

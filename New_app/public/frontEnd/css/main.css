@@ -347,7 +347,7 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  background: #E8F9AA;
+  background: #e0e3d6;
 }
 
 
@@ -886,7 +886,7 @@ h2.title {
 }
 
 .productinfo img{
-  width: 100%;
+  width: 80%;
 }
 
 .productinfo{
@@ -1488,9 +1488,8 @@ h2.title {
     margin-left:0px;
 }
 
-.login-form label{
 
-}
+
 
 
 .login-form label input {
@@ -1505,6 +1504,19 @@ h2.title {
 
 .or{
 	background: #45B649;
+	border-radius: 40px;
+	color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 75px;
+	text-align: center;
+	width: 50px;
+}
+
+.or_sell{
+	background: #121312;
 	border-radius: 40px;
 	color: #FFFFFF;
 	font-family: 'Roboto', sans-serif;

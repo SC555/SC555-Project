@@ -13,7 +13,7 @@ $(document).ready(function(){
                     $("#chkPwd").html("<span style='color: green;font-weight: bold;'>Current Password is Correct</span>");
                 }
             },error:function(){
-                alert("Error Ajax");
+                //alert("Error Ajax");
             }
         });
 	});
@@ -31,7 +31,7 @@ $(document).ready(function(){
                     $("#chCategory_name").html("<span style='color: red;'>The name has already been taken.</span>");
 				}
             },error:function () {
-				alert("Error Ajax");
+				//alert("Error Ajax");
             }
 		});
     });

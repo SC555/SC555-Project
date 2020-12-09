@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2020 at 05:17 PM
+-- Generation Time: Dec 06, 2020 at 02:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -60,7 +60,10 @@ INSERT INTO `cart` (`id`, `products_id`, `product_name`, `product_code`, `produc
 (48, 27, '2019 New Toyota Highlander XLE V6', 'SKU-Hilander1', 'White', 'Size Red', 20.00, 1, 'weshare@gmail.com', 'qzJzOmHHV9QV265RarFbInxraTurmnX2XNp2WYme', '2020-11-29 11:58:06', '2020-11-29 11:58:06'),
 (49, 1, 'Cinnamon power', 'KG', 'brown', 'Mediam', 50.00, 10, 'weshare@gmail.com', 'UaJpBJtRYbGHNrHHTwc9nNGIPiqdxoCAK2kcYQ8e', '2020-11-30 12:25:37', '2020-11-30 12:25:37'),
 (50, 1, 'Cinnamon power', 'KG', 'brown', 'medium', 50.00, 2, 'weshare@gmail.com', '47sPvoO3JParBIoynEHmg9FNBf1F8VodbeDn8wu1', '2020-11-30 12:43:08', '2020-11-30 12:43:08'),
-(51, 5, 'Green cardomon', 'KG', 'Green', 'medium', 75.00, 50, 'weshare@gmail.com', '47sPvoO3JParBIoynEHmg9FNBf1F8VodbeDn8wu1', '2020-11-30 12:43:35', '2020-11-30 12:43:35');
+(51, 5, 'Green cardomon', 'KG', 'Green', 'medium', 75.00, 50, 'weshare@gmail.com', '47sPvoO3JParBIoynEHmg9FNBf1F8VodbeDn8wu1', '2020-11-30 12:43:35', '2020-11-30 12:43:35'),
+(52, 2, 'Vanilla extract', 'Bottle', 'brown', 'small', 10.00, 10, 'weshare@gmail.com', 'lFnXfZRM06Ri9835VdhGp0KTns0XV3wO2U3nLZin', '2020-12-02 06:04:39', '2020-12-02 06:04:39'),
+(58, 6, 'Cardomon power', 'KG', 'brown', 'medium', 50.00, 2, 'weshare@gmail.com', 'uCR9NgtONAz2EB2z9MUzTxsepkPmgnjyqEPyOzJa', '2020-12-04 11:42:58', '2020-12-04 11:42:58'),
+(57, 4, 'Green Pepper', 'Bottle', 'Green', 'small', 45.00, 1, 'weshare@gmail.com', 'uCR9NgtONAz2EB2z9MUzTxsepkPmgnjyqEPyOzJa', '2020-12-04 11:42:27', '2020-12-04 11:42:27');
 
 -- --------------------------------------------------------
 
@@ -450,7 +453,8 @@ CREATE TABLE `delivery_address` (
 --
 
 INSERT INTO `delivery_address` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `created_at`, `updated_at`) VALUES
-(1, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111', NULL, NULL);
+(1, 7, 'ramithumeth@gmail.com', 'Shanika', '15', 'Mount lavinia', 'Colombo', 'Sri Lanka', '456223', '0112545666+', NULL, NULL),
+(2, 6, 'shanikauwu@gmail.com', 'shanika dilahani', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -514,7 +518,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-(1, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '3850', '2020-11-30 12:45:07', '2020-11-30 12:45:07');
+(1, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '3850', '2020-11-30 12:45:07', '2020-11-30 12:45:07'),
+(2, 6, 'shanikauwu@gmail.com', 'shanika dilahani', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:38:21', '2020-12-04 06:38:21'),
+(3, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:39:15', '2020-12-04 06:39:15'),
+(4, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:54:33', '2020-12-04 06:54:33'),
+(5, 7, 'ramithumeth@gmail.com', 'Shanika', '15', 'Mount lavinia', 'Colombo', '456223', 'Sri Lanka', '0112545666+', 0.00, 'NO Coupon', '0', 'success', 'COD', '145', '2020-12-04 11:45:02', '2020-12-04 11:45:02');
 
 -- --------------------------------------------------------
 
@@ -581,7 +589,7 @@ CREATE TABLE `product_att` (
 --
 
 INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-(1, 6, 'KG', 'medium', 50.00, 250, '2020-11-30 12:33:14', '2020-11-30 12:33:14'),
+(1, 6, 'KG', 'medium', 50.00, 250, '2020-11-30 12:33:14', '2020-12-04 11:29:27'),
 (2, 5, 'KG', 'medium', 75.00, 1000, '2020-11-30 12:33:38', '2020-11-30 12:33:38'),
 (3, 4, 'Bottle', 'small', 45.00, 1000, '2020-11-30 12:34:09', '2020-11-30 12:34:50'),
 (4, 3, 'KG', 'medium', 45.00, 500, '2020-11-30 12:35:24', '2020-11-30 12:35:24'),
@@ -631,10 +639,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`, `address`, `city`, `state`, `country`, `pincode`, `mobile`) VALUES
-(1, 'WeShare', 'demo@gmail.com', NULL, '$2y$10$6Blr5Az7c8FFfnCYbkoIjeXcGmYYlYVCOVNdfewMFT71zqH6ujmMC', 1, 'p54zjvMyzoFrHSYQbjXZi8TVKjRgAmBwpptu0eljhkrZe6SDY1ntwLHwHU4u', '2018-10-15 02:32:54', '2020-11-29 11:30:17', '123 Street', 'Phnom Penh', 'PP', 'Cambodia', '12252', '010313234'),
 (8, 'Sisil', 'waraacc@gmail.co', NULL, '$2y$10$IxEJnVcZflW8TReVpGa8iuf1ugEOMTEnxbFTalgqxbEwt/EJn8U1a', NULL, NULL, '2020-11-29 11:55:51', '2020-11-29 11:55:51', NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'shanika dilahani', 'shanikauwu@gmail.com', NULL, '$2y$10$yg/HPfv6wXXfwW370OG5q.BdLMQq77zfPwjYok3mgCLta8NsEuQpi', 1, NULL, '2020-11-29 11:32:55', '2020-11-29 11:32:55', NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'Ramithu', 'ramithumeth@gmail.com', NULL, '$2y$10$2wZTE9hQlQuCdPkhnisAtu73BY908HD4/KXn1bGpcYuxbCTHuEiFO', NULL, NULL, '2020-11-29 11:34:32', '2020-11-29 11:34:32', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111');
+(6, 'shanika dilahani', 'shanikauwu@gmail.com', NULL, '$2y$10$yg/HPfv6wXXfwW370OG5q.BdLMQq77zfPwjYok3mgCLta8NsEuQpi', 1, NULL, '2020-11-29 11:32:55', '2020-11-29 11:32:55', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111'),
+(7, 'Ramithu', 'ramithumeth@gmail.com', NULL, '$2y$10$2wZTE9hQlQuCdPkhnisAtu73BY908HD4/KXn1bGpcYuxbCTHuEiFO', 2, NULL, '2020-11-29 11:34:32', '2020-11-29 11:34:32', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111');
 
 --
 -- Indexes for dumped tables
@@ -722,7 +729,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -746,7 +753,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `delivery_address`
 --
 ALTER TABLE `delivery_address`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -758,7 +765,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
