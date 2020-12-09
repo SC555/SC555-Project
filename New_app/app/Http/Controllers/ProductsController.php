@@ -225,7 +225,7 @@ class ProductsController extends Controller
        $Search=$request -> Search;
          $products = DB::table('products');  
          $results = $products->where('p_name', 'LIKE', '%'. $Search .'%')->get();
-         return view('frontend.products')->with('products', $results);        
+         return view('frontend.products')->with('products', $results);       
 } */
 
          public function search(){
