@@ -17,7 +17,7 @@ Route::get('/cat/{id}','IndexController@listByCat')->name('cats');
 Route::get('/product-detail/{id}','IndexController@detialpro');
 Route::get('/about','AboutController@about');
 Route::get('/contact','ContactController@contact');
-Route::get('/search','ProductsController@search'); 
+Route::get('/search','ProductsController@search');
 
 
 ////// get Attribute ////////////
@@ -58,33 +58,33 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
     Route::get('/logout_vendor','VendorsController@logout');
 
 
-    //////vendor   Authentications 
+    //////vendor   Authentications
     Route::group(['middleware'=>'VendorLogin_middleware'],function (){
 
         Route::get('/vendor_home', 'AdminController@index')->name('backEnd.index');
-        Route::get('product/create', 'ProductsController@create')->name('backEnd.products.create'); 
+        Route::get('product/create', 'ProductsController@create')->name('backEnd.products.create');
         Route::post('/product_store', 'ProductsController@store') ;
-        Route::get('product/index', 'ProductsController@index')->name('backEnd.products.index'); 
+        Route::get('product/index', 'ProductsController@index')->name('backEnd.products.index');
         Route::get('product/edit/{id}', 'ProductsController@edit')->name('backEnd.products.edit');
         Route::put('product/update/{id}', 'ProductsController@update')->name('product_update');
         Route::get('product/delete-product/{id}','ProductsController@destroy');
         Route::resource('/product','ProductsController');
 
         ///my account Setting Area
-        
+
         Route::get('/vendor_account','VendorsController@account');
-       
-     
-     
+
+
+
         /// Product Attribute
           Route::resource('/product_attr','ProductAtrrController');
           Route::get('delete-attribute/{id}','ProductAtrrController@deleteAttr');
-         
-        
+
+
           /// Product Images Gallery
          Route::resource('/image-gallery','ImagesController');
          Route::get('delete-imageGallery/{id}','ImagesController@destroy');
-        
+
 
 });
 //////
@@ -107,12 +107,12 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
     Route::resource('/product','ProductsController');
     Route::get('delete-product/{id}','ProductsController@destroy');
     Route::get('delete-image/{id}','ProductsController@deleteImage');
-    
-  
+
+
     /// ///////// Coupons Area //////////
     Route::resource('/coupon','CouponController');
     Route::get('delete-coupon/{id}','CouponController@destroy');
-    
+
 
     /// ///////// Orders //////////
     Route::get('order/listview', 'OrdersController@listView')->name('admin.order.listview');
@@ -121,13 +121,15 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
     /// ///////// Users  //////////
     Route::resource('/user','UsersController');
     Route::get('delete-user/{id}','UsersController@destroy');
-    Route::get('userview/listUser', 'UsersController@userView')->name('admin.user.index'); 
+    Route::get('userview/listUser', 'UsersController@userView')->name('admin.user.index');
     Route::get('userview/updateUser', 'UsersController@updateAdmin')->name('admin.userview.updateadmin');
-    Route::get('userview/vendors', 'UsersController@vendorAll')->name('admin.userview.vendors'); 
-    Route::get('userview/buyers', 'VendorsController@buyersAll')->name('admin.userview.buyers');     
+    Route::get('userview/vendors', 'UsersController@vendorAll')->name('admin.userview.vendors');
+    Route::get('userview/buyers', 'VendorsController@buyersAll')->name('admin.userview.buyers');
     Route::resource('/userview','UsersController');
 
-      
+
 
 ///
 });
+//search
+Route::get('/search','SearchController@searchProducts');

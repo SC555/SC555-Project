@@ -551,7 +551,7 @@ CREATE TABLE `products` (
   `categories_id` int(11) NOT NULL,
   `p_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `p_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `p_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p_color` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(8,2) NOT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,

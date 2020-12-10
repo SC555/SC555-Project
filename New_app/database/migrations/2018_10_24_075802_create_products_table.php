@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('categories_id');
             $table->string('p_name');
             $table->string('p_code');
-            $table->string('p_color');
+            $table->string('p_color')->nullable();
             $table->text('description');
             $table->float('price');
             $table->string('image');

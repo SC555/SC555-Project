@@ -30,18 +30,23 @@
                                         <a href="{{url('/product-detail',$product->id)}}" class="btn btn-default add-to-cart">View Product</a>
                                     </div>
                                 </div>
-                            
+
                             </div>
                         </div>
                         @endif
                     @endforeach
+
+                    <div class="pagination-area-numbered">
+                        {!! $products->appends(Request::except('page'))->render() !!}
+                    </div>
                {{-- <ul class="pagination">
                         <li class="active"><a href="">1</a></li>
                         <li><a href="">2</a></li>
                         <li><a href="">3</a></li>
                         <li><a href="">&raquo;</a></li>
-                    </ul>--}} 
+                    </ul>--}}
                 </div><!--features_items-->
+
             </div>
         </div>
     </div>

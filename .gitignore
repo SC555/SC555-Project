@@ -1,3 +1,6 @@
 /New_app/node_modules
 /New_app/vendor
+/New_app/.env
+/New_app/composer.lock
 .idea
+/New_app/.idea
