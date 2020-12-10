@@ -9,6 +9,51 @@
                 {{Session::get('message')}}
             </div>
         @endif
+		 <div class="row">
+             <div class="profile">   <!--  my profile -->
+               <div class="card-body">
+                 <div class="col-md-4 "> 
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{$user_login->name}}</h4>
+                      <p class="text-secondary"><b>Buyer</b></p>
+                      <p class="text-muted font-size-sm"><b>ID:</b>  {{$user_login->id}}</p>
+                      
+                    </div>
+                  </div>
+                </div>
+            <div class="col-md-8">
+                  <div class="row text-center">
+                    <div class="col-sm-3 title">
+                      <h6 class="mb-0">Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary text-center">
+                     {{$user_login->name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row text-center">
+                    <div class="col-sm-3 title">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary text-center">
+                      {{$user_login->mobile}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row text-center">
+                    <div class="col-sm-3 title">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary text-center">
+                    {{$user_login->address}}, {{$user_login->city}}, {{$user_login->state}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+           </div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->

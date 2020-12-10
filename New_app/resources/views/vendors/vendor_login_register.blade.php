@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="container">
-
+		<div class= "sell">
  
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
-                    <h2>Login As a vendor</h2>
+                     <h2>Login as a <b>Vendor</b></h2>
                     <form action="{{url('/login_vendor')}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="email" placeholder="Email" name="email"/>
@@ -28,12 +28,12 @@
                     </form>
                 </div><!--/login form-->
             </div>
-            <div class="col-sm-1">
-                <h2 class="or_sell">OR</h2>
+             <div class="col-sm-1">
+                <h2 class="orr">OR</h2>
             </div>
             <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
-                    <h2>New vendor Signup!</h2>
+                    <h2>New <b>Vendor</b> Signup!</h2>
                     <form action="{{url('/register_vendor')}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="text" placeholder="Name" name="name" value="{{old('name')}}"/>
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
     <div style="margin-bottom: 20px;"></div>

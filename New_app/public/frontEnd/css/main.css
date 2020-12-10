@@ -1420,7 +1420,11 @@ h2.title {
 
 
 /*login page CSS********************************/
-
+.buy{
+	background-color:white;
+	margin-top:10px;
+	box-shadow: 10px 10px 18px #888888;
+}
 #form {
   display: block;
   margin-bottom: 185px;
@@ -2139,7 +2143,7 @@ h2.title {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #F3FBF7;
+  background-color: white;
   background-clip: border-box;
   border: 1 solid rgba(0,0,0,.125);
   border-radius: .25rem;
@@ -2208,4 +2212,124 @@ h2.title {
     left: -50%;
     float:right;
     width:auto;
+}
+/*login-seller page CSS********************************/
+.sell{
+	background-color:white;
+	margin-top:10px;
+	box-shadow: 10px 10px 18px #888888;
+}
+
+
+#seller {
+  display: block;
+  margin-bottom: 185px;
+  margin-top: 185px;
+  overflow: hidden;
+  background-color:red;
+}
+
+.login-seller{
+ 
+}
+
+.signup-seller {
+
+}
+
+.login-seller h2, .signup-seller h2 {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+
+.login-seller form input, .signup-seller form input {
+  background:#F1F3E4;
+  border: medium none;
+  color: #111;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 100%;
+   
+}
+
+.login-seller form span{
+  line-height: 25px;
+}
+
+.login-seller form span input {
+  width: 15px;
+  float: left;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.login-seller form button {
+  margin-top: 23px;
+}
+
+.login-seller form button, .signup-seller form button {
+  background: #45B649;
+  border: medium none;
+  border-radius: 0;
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  padding: 6px 20px;
+  margin: 10px;
+    margin-left:0px;
+}
+
+.login-seller label{
+
+}
+
+
+.login-seller label input {
+  border: medium none;
+  display: inline-block;
+  height: 0;
+  margin-bottom: 0;
+  outline: medium none;
+  padding-left: 0;
+}
+
+
+.orr{
+	background: black;
+	border-radius: 40px;
+	color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 75px;
+	text-align: center;
+	width: 50px;
+}
+
+/*Order History*******************/
+.order{
+	background-color:white;
+	margin-top:20px;
+	text-align:center;
+	color:black;
+    margin-bottom: 20px;
+	border:1px solid black;
+	padding:2px;
+}
+.table-striped{
+	text-align:center;
+}
+.tpoics{
+	text-align:center;
 }
