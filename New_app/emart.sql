@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2020 at 02:37 PM
+-- Generation Time: Dec 09, 2020 at 03:40 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -63,7 +63,8 @@ INSERT INTO `cart` (`id`, `products_id`, `product_name`, `product_code`, `produc
 (51, 5, 'Green cardomon', 'KG', 'Green', 'medium', 75.00, 50, 'weshare@gmail.com', '47sPvoO3JParBIoynEHmg9FNBf1F8VodbeDn8wu1', '2020-11-30 12:43:35', '2020-11-30 12:43:35'),
 (52, 2, 'Vanilla extract', 'Bottle', 'brown', 'small', 10.00, 10, 'weshare@gmail.com', 'lFnXfZRM06Ri9835VdhGp0KTns0XV3wO2U3nLZin', '2020-12-02 06:04:39', '2020-12-02 06:04:39'),
 (58, 6, 'Cardomon power', 'KG', 'brown', 'medium', 50.00, 2, 'weshare@gmail.com', 'uCR9NgtONAz2EB2z9MUzTxsepkPmgnjyqEPyOzJa', '2020-12-04 11:42:58', '2020-12-04 11:42:58'),
-(57, 4, 'Green Pepper', 'Bottle', 'Green', 'small', 45.00, 1, 'weshare@gmail.com', 'uCR9NgtONAz2EB2z9MUzTxsepkPmgnjyqEPyOzJa', '2020-12-04 11:42:27', '2020-12-04 11:42:27');
+(57, 4, 'Green Pepper', 'Bottle', 'Green', 'small', 45.00, 1, 'weshare@gmail.com', 'uCR9NgtONAz2EB2z9MUzTxsepkPmgnjyqEPyOzJa', '2020-12-04 11:42:27', '2020-12-04 11:42:27'),
+(60, 4, 'Green Pepper', 'Bottle', 'Green', 'Large', 75.00, 1, 'weshare@gmail.com', 'bxVz2nJRuQu8O2QdFvZKLHDvRkoW3JUOfD9xncgW', '2020-12-07 23:01:13', '2020-12-07 23:01:13');
 
 -- --------------------------------------------------------
 
@@ -454,7 +455,8 @@ CREATE TABLE `delivery_address` (
 
 INSERT INTO `delivery_address` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `country`, `pincode`, `mobile`, `created_at`, `updated_at`) VALUES
 (1, 7, 'ramithumeth@gmail.com', 'Shanika', '15', 'Mount lavinia', 'Colombo', 'Sri Lanka', '456223', '0112545666+', NULL, NULL),
-(2, 6, 'shanikauwu@gmail.com', 'shanika dilahani', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111', NULL, NULL);
+(2, 6, 'shanikauwu@gmail.com', 'shanika dilahani', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111', NULL, NULL),
+(3, 10, 'buyer@gmail.com', 'Test buyer', '15', 'Mount lavinia', 'Colombo', 'Sri Lanka', '456223', '0112545666', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -522,7 +524,8 @@ INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`
 (2, 6, 'shanikauwu@gmail.com', 'shanika dilahani', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:38:21', '2020-12-04 06:38:21'),
 (3, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:39:15', '2020-12-04 06:39:15'),
 (4, 7, 'ramithumeth@gmail.com', 'Ramithu', '176', 'Kandy', 'weerrr', '32104', 'Sri Lanka', '0774654111', 0.00, 'NO Coupon', '0', 'success', 'COD', '950', '2020-12-04 06:54:33', '2020-12-04 06:54:33'),
-(5, 7, 'ramithumeth@gmail.com', 'Shanika', '15', 'Mount lavinia', 'Colombo', '456223', 'Sri Lanka', '0112545666+', 0.00, 'NO Coupon', '0', 'success', 'COD', '145', '2020-12-04 11:45:02', '2020-12-04 11:45:02');
+(5, 7, 'ramithumeth@gmail.com', 'Shanika', '15', 'Mount lavinia', 'Colombo', '456223', 'Sri Lanka', '0112545666+', 0.00, 'NO Coupon', '0', 'success', 'COD', '145', '2020-12-04 11:45:02', '2020-12-04 11:45:02'),
+(6, 10, 'buyer@gmail.com', 'Test buyer', '15', 'Mount lavinia', 'Colombo', '456223', 'Sri Lanka', '0112545666', 0.00, 'NO Coupon', '0', 'success', 'COD', '75', '2020-12-07 23:04:52', '2020-12-07 23:04:52');
 
 -- --------------------------------------------------------
 
@@ -544,6 +547,7 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
   `categories_id` int(11) NOT NULL,
   `p_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `p_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -559,13 +563,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Cinnamon power', 'CN-001', 'brown', 'Sri Lanka was the only source of cinnamon, kept secret by Arab traders who wished to monopolize the market.&nbsp;Ceylon cinnamon is warm woody, and sweeter than other varieties. It has a complex ,sophisticated favor, which is delicate, flowery and subtle.', 50.00, '1606757296-cinnamon-power.jpg', '2020-11-30 11:58:16', '2020-11-30 11:58:16'),
-(2, 5, 'Vanilla extract', 'VN-1', 'brown', '<span>ingredients for&nbsp;homemade vanilla extract:&nbsp;vanilla beans and vodka. Let the vanilla beans infuse the vodka for as little as 8 weeks, but for optimal flavor, wait at least 6-12 months before using.</span>', 10.00, '1606757622-vanilla-extract.jpg', '2020-11-30 12:03:42', '2020-11-30 12:03:42'),
-(3, 2, 'Black Pepper', 'BP-1', 'Black', 'Ceylon Pepper is organic and has a higher piperine content, which gives it a superior quality and pungency.<br>We supply the finest grade Ceylon Pepper in whole, coarse or in ground form to our customers world over', 45.00, '1606757938-black-pepper.jpg', '2020-11-30 12:08:58', '2020-11-30 12:08:58'),
-(4, 2, 'Green Pepper', 'GP-1', 'Green', 'Fresh raw green pepper berries cleaned and treated in brine.', 30.00, '1606758066-green-pepper.jpg', '2020-11-30 12:11:07', '2020-11-30 12:11:07'),
-(5, 4, 'Green cardomon', 'GC-1', 'Green', 'Premium quality 7mm diameter Green Cardamom bolts. All natural spices from Srilanka.&nbsp;<br>Freshly harvest big cardamom. No pesticides and additives for Color or Flavor.<br>', 75.00, '1606758378-green-cardomon.jpg', '2020-11-30 12:16:19', '2020-11-30 12:16:19'),
-(6, 4, 'Cardomon power', 'CP-1', 'brown', 'Traditionally, it has been used in Ayurveda, Chinese, and Unani medicine for many years. It is extensively employed in Indian, Arabic, Middle Eastern, and Swedish cuisine. This spice is commonly utilized in desserts, hot and spicy dishes, as well as aromatic beverages', 100.00, '1606758549-cardomon-power.jpg', '2020-11-30 12:19:09', '2020-11-30 12:19:09');
+INSERT INTO `products` (`id`, `user_id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+(1, 0, 1, 'Cinnamon power', 'CN-001', 'brown', 'Sri Lanka was the only source of cinnamon, kept secret by Arab traders who wished to monopolize the market.&nbsp;Ceylon cinnamon is warm woody, and sweeter than other varieties. It has a complex ,sophisticated favor, which is delicate, flowery and subtle.', 50.00, '1606757296-cinnamon-power.jpg', '2020-11-30 11:58:16', '2020-11-30 11:58:16'),
+(2, 0, 5, 'Vanilla extract', 'VN-1', 'brown', '<span>ingredients for&nbsp;homemade vanilla extract:&nbsp;vanilla beans and vodka. Let the vanilla beans infuse the vodka for as little as 8 weeks, but for optimal flavor, wait at least 6-12 months before using.</span>', 10.00, '1606757622-vanilla-extract.jpg', '2020-11-30 12:03:42', '2020-11-30 12:03:42'),
+(3, 0, 2, 'Black Pepper', 'BP-1', 'Black', 'Ceylon Pepper is organic and has a higher piperine content, which gives it a superior quality and pungency.<br>We supply the finest grade Ceylon Pepper in whole, coarse or in ground form to our customers world over', 45.00, '1606757938-black-pepper.jpg', '2020-11-30 12:08:58', '2020-11-30 12:08:58'),
+(4, 7, 2, 'Green Pepper', 'GP-1', 'Green', 'Fresh raw green pepper berries cleaned and treated in brine.&nbsp;', 30.00, '1606758066-green-pepper.jpg', '2020-11-30 12:11:07', '2020-12-07 12:30:46'),
+(5, 0, 4, 'Green cardomon', 'GC-1', 'Green', 'Premium quality 7mm diameter Green Cardamom bolts. All natural spices from Srilanka.&nbsp;<br>Freshly harvest big cardamom. No pesticides and additives for Color or Flavor.<br>', 75.00, '1606758378-green-cardomon.jpg', '2020-11-30 12:16:19', '2020-11-30 12:16:19'),
+(6, 7, 4, 'Cardomon power', 'CP-1', 'brown', 'Traditionally, it has been used in Ayurveda, Chinese, and Unani medicine for many years. It is extensively employed in Indian, Arabic, Middle Eastern, and Swedish cuisine. This spice is commonly utilized in desserts, hot and spicy dishes, as well as aromatic beverages.', 100.00, '1606758549-cardomon-power.jpg', '2020-11-30 12:19:09', '2020-12-07 12:37:26');
 
 -- --------------------------------------------------------
 
@@ -589,12 +593,15 @@ CREATE TABLE `product_att` (
 --
 
 INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-(1, 6, 'KG', 'medium', 50.00, 250, '2020-11-30 12:33:14', '2020-12-04 11:29:27'),
+(1, 6, 'KG', 'medium', 50.00, 50, '2020-11-30 12:33:14', '2020-12-07 22:57:38'),
 (2, 5, 'KG', 'medium', 75.00, 1000, '2020-11-30 12:33:38', '2020-11-30 12:33:38'),
-(3, 4, 'Bottle', 'small', 45.00, 1000, '2020-11-30 12:34:09', '2020-11-30 12:34:50'),
+(3, 4, 'Bottle', 'small', 45.00, 500, '2020-11-30 12:34:09', '2020-12-07 23:00:10'),
 (4, 3, 'KG', 'medium', 45.00, 500, '2020-11-30 12:35:24', '2020-11-30 12:35:24'),
 (5, 2, 'Bottle', 'small', 10.00, 100, '2020-11-30 12:36:33', '2020-11-30 12:36:33'),
-(6, 1, 'KG', 'medium', 50.00, 250, '2020-11-30 12:36:56', '2020-11-30 12:36:56');
+(6, 1, 'KG', 'medium', 50.00, 250, '2020-11-30 12:36:56', '2020-11-30 12:36:56'),
+(7, 7, 'KG', 'small', 10.00, 200, '2020-12-07 05:42:18', '2020-12-07 06:26:48'),
+(8, 18, 'KG', 'small', 45.00, 140, '2020-12-07 12:59:00', '2020-12-07 12:59:10'),
+(9, 4, 'Bottle', 'Large', 75.00, 200, '2020-12-07 23:00:31', '2020-12-07 23:00:31');
 
 -- --------------------------------------------------------
 
@@ -609,6 +616,13 @@ CREATE TABLE `tblgallery` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tblgallery`
+--
+
+INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 6, '3454601607346501.jpg', '2020-12-07 07:38:21', '2020-12-07 07:38:21');
 
 -- --------------------------------------------------------
 
@@ -639,7 +653,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`, `address`, `city`, `state`, `country`, `pincode`, `mobile`) VALUES
-(8, 'Sisil', 'waraacc@gmail.co', NULL, '$2y$10$IxEJnVcZflW8TReVpGa8iuf1ugEOMTEnxbFTalgqxbEwt/EJn8U1a', NULL, NULL, '2020-11-29 11:55:51', '2020-11-29 11:55:51', NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'charunika', 'charunika@gmail.com', NULL, '$2y$10$fZ2gcgJmiHsbNejrG11h6eU4MbAjNzbQvHsgAGUM3ivsgw28METim', 2, NULL, '2020-12-07 13:22:35', '2020-12-07 13:22:35', 'N0:123', 'Kurunagala', 'Srilanka', NULL, '42333', NULL),
+(10, 'Test buyer', 'buyer@gmail.com', NULL, '$2y$10$dQUQiX7/LethfQWgUsUyleEtnYrqjPY32P0f.mVLDziW85UdlBpJ.', NULL, NULL, '2020-12-07 23:03:33', '2020-12-07 23:03:33', '15', 'Mount lavinia', 'Colombo', 'Sri Lanka', '456223', '0112545666'),
 (6, 'shanika dilahani', 'shanikauwu@gmail.com', NULL, '$2y$10$yg/HPfv6wXXfwW370OG5q.BdLMQq77zfPwjYok3mgCLta8NsEuQpi', 1, NULL, '2020-11-29 11:32:55', '2020-11-29 11:32:55', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111'),
 (7, 'Ramithu', 'ramithumeth@gmail.com', NULL, '$2y$10$2wZTE9hQlQuCdPkhnisAtu73BY908HD4/KXn1bGpcYuxbCTHuEiFO', 2, NULL, '2020-11-29 11:34:32', '2020-11-29 11:34:32', '176', 'Kandy', 'weerrr', 'Sri Lanka', '32104', '0774654111');
 
@@ -729,7 +744,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -753,7 +768,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `delivery_address`
 --
 ALTER TABLE `delivery_address`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -765,31 +780,31 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product_att`
 --
 ALTER TABLE `product_att`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tblgallery`
 --
 ALTER TABLE `tblgallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

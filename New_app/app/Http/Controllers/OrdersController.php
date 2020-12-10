@@ -64,8 +64,10 @@ class OrdersController extends Controller
         $orders = DB::table('orders')
                     ->where('users_id', Auth::id())
                     ->orderBy('created_at','desc')->get();
+                   
+    
+            return view('users.order_history',compact('menu_active','orders','i'));
 
-        return view('users.order_history',compact('menu_active','orders','i'));
        
     }
 

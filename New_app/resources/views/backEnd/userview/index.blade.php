@@ -1,11 +1,11 @@
 @extends('backEnd.layouts.master')
-@section('title','List Orders')
+@section('title','Users')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="" class="current">Orders</a></div>
+    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="" class="current">User List</a></div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">
-                <strong>Well done!</strong> {{Session::get('message')}}
+                <strong></strong> {{Session::get('message')}}
             </div>
         @endif
         <div class="widget-box">
@@ -16,36 +16,33 @@
                 <table class="table table-bordered data-table">
                     <thead>
                     <tr>
-                       <th>Order id</th>
-                        <th>users_id</th>
-                        
-                                                <th>Shipping Address</th>
-                                                <th>City</th>
-                                                <th>States</th>
-                                                <th>Country</th>
-                                                <th>Shipping Charges</th>
-                                                <th>Order Status</th>
-                                                <th>payment Method</th>
-                                                <th>Grand Total</th>
-                                                <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>country</th>
+                        <th>Pincode</th>
+                        <th>Mobile</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach($orders as $order)
+                        @foreach($users as $user)
                           
                             <tr class="gradeC">
-                                <td>{{$order->id}}</td>
-                                <td> {{$order->users_id}}  </td>
-                                <td> {{$order->address}}  </td>
-                                <td>{{$order->city}}</td>
-                                <td> {{$order->state}} </td>
-                                <td> {{$order->country}} </td>
-                                <td> {{$order->shipping_charges	}} </td>
-                                <td> {{$order->order_status}} </td>
-                                <td> {{$order->payment_method}} </td>
-                                <td> {{$order->grand_total}} </td>
-                                <td> {{$order->created_at}} </td>
-                                </td>
+                                <td>{{$user->name}}</td>
+                                <td> {{$user->email }}  </td>
+                                <td style="text-align: center">{{$user->address}}</td>
+                                <td style="text-align: center">{{$user->city}}</td>
+                                <td style="text-align: center"> {{$user->state}} </td>
+                                <td style="text-align: center">{{$user->country}}</td>
+                                <td style="text-align: center"> {{$user->pincode}} </td>
+                                <td style="text-align: center"> {{$user->mobile}} </td>
+                                <td style="text-align: center; vertical-align: middle;">
+                                <a href="{{route('userview.edit',$user->id)}}" class="btn btn-primary btn-mini">Edit</a>
+                                <a href="javascript:" rel="{{$user->id}}" rel1="delete-user" class="btn btn-danger btn-mini deleteRecord">Delete</a>
+                            </td>
                             </tr>
                         @endforeach
                     </tbody>

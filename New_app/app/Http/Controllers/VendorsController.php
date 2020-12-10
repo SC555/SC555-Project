@@ -67,7 +67,16 @@ class VendorsController extends Controller
 
     }
     
-    
+    public function buyersAll(){
+        $menu_active=6;
+        $i=0;
+        
+        $users = DB::table('users')
+                    ->where('admin', null)
+                    ->orderBy('created_at','desc')->get();
+
+        return view('backEnd.userview.buyers_list',compact('menu_active','users','i'));
+    }
 
    
 }

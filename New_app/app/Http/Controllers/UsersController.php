@@ -40,11 +40,15 @@ class UsersController extends Controller
         Session::forget('frontSession');
         return redirect('/');
     }
+
+
     public function account(){
         $countries=DB::table('countries')->get();
         $user_login=User::where('id',Auth::id())->first();
         return view('users.account',compact('countries','user_login'));
     }
+
+    
     public function updateprofile(Request $request,$id){
         $this->validate($request,[
             'address'=>'required',
@@ -130,15 +134,6 @@ class UsersController extends Controller
         return view('backEnd.userview.vendor_list',compact('menu_active','users','i'));
     }
 
-    public function buyersAll(){
-        $menu_active=6;
-        $i=0;
-        
-        $users = DB::table('users')
-                    ->where('admin', null)
-                    ->orderBy('created_at','desc')->get();
-
-        return view('backEnd.userview.vendor_list',compact('menu_active','users','i'));
-    }
+   
 
 }

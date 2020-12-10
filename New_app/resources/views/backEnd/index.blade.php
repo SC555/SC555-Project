@@ -19,7 +19,7 @@
             @else
                 <li class="bg_ls"> <a href="{{route('admin.userview.vendors')}}"> <i class="icon-group"></i> <span class="label label-important"></span> Sellers</a> </li>
                 <li class="bg_lg"> <a href="{{route('admin.userview.buyers')}}"> <i class="icon-group"></i> <span class="label label-important"></span> Buyers</a> </li>
-                 <li class="bg_ls"> <a href="{{url('userview/listUser')}}"> <i class="icon-group"></i> <span class="label label-important"></span> Users</a> </li>
+                 <li class="bg_ls"> <a href="{{route('admin.user.index')}}"> <i class="icon-group"></i> <span class="label label-important"></span> Users</a> </li>
 
                  <li class="bg_dy "> <a href="{{route('admin.order.listview')}}"> <i class="icon-exchange"></i> Sales</a> </li>
                 <li class="bg_lg"> <a href="{{route('category.index')}}"> <i class="icon-group"></i> <span class="label label-important"></span> Category</a> </li>
