@@ -124,7 +124,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
     Route::get('userview/listUser', 'UsersController@userView')->name('admin.user.index'); 
     Route::get('userview/updateUser', 'UsersController@updateAdmin')->name('admin.userview.updateadmin');
     Route::get('userview/vendors', 'UsersController@vendorAll')->name('admin.userview.vendors'); 
-    Route::get('userview/buyers', 'UsersController@buyersAll')->name('admin.userview.buyers');     
+    Route::get('userview/buyers', 'VendorsController@buyersAll')->name('admin.userview.buyers');     
     Route::resource('/userview','UsersController');
 
       

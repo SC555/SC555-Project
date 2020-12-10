@@ -4,9 +4,19 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="container-fluid">
+ 
+ 
+        @if(Session::has('message'))
+                <div class="alert alert-success text-center" role="alert">
+                    <strong></strong> {{Session::get('message')}}
+                </div>
+        @endif
      
-             <div class="widget-box">
+        <div class="row">
+          
+                                  
+
+
                                     <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
                                         <legend>History of my previous Orders</legend>
                                     </div>
@@ -15,6 +25,7 @@
                                     <div class="widget-content nopadding">
 
                                     
+
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -30,6 +41,8 @@
                                                 <th>Date</th>
                                             </thead>
                                             <tbody>
+                                           
+
                                                 @foreach($orders as $order)
                                                 
                                                     <tr class="gradeC">
@@ -46,11 +59,13 @@
                                                         
                                                     </tr>
                                                 @endforeach
+                                           
                                             </tbody>
-                                        </table>
+                                        </table>   
+                                   
                                     </div>
-                                
-              </div>                 
-    </div>
+                                   
+         </div>                 
+ 
   </div>  
 @endsection

@@ -221,21 +221,14 @@ class ProductsController extends Controller
         }
         return back();
     }
-	     /*  public function search(Request $request){
-       $Search=$request -> Search;
-         $products = DB::table('products');  
-         $results = $products->where('p_name', 'LIKE', '%'. $Search .'%')->get();
-         return view('frontend.products')->with('products', $results);       
-} */
-
-         public function search(){
-            $Search=$_GET['query'];
-            $products = Products_model ::where('p_name', 'LIKE', '%'.$Search.'%')->with('category')->get();
-            return view('frontEnd.index',compact('products'));  
-         
-         }
 
 
- 
+    
+    public function search(){
+        $Search=$_GET['query'];
+        $products = Products_model ::where('p_name', 'LIKE', '%'.$Search.'%')->with('category')->get();
+         return view('frontEnd.index',compact('products'));  
+      
+    }
 
 }
