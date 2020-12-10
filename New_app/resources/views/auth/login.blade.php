@@ -19,7 +19,7 @@
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
-                    <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+                    <span class="add-on bg_ls"><i class="icon-user"> </i></span>
                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                     @if ($errors->has('email'))
                         <br><span class="invalid-feedback" style="color: white;">
@@ -32,7 +32,7 @@
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
-                    <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+                    <span class="add-on bg_lh"><i class="icon-lock"></i></span>
                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
