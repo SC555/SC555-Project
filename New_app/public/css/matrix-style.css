@@ -520,6 +520,122 @@ table.table .avatar {
 	vertical-align: middle;
 	margin-right: 10px;
 }
+/*login page CSS********************************/
+
+.form{
+  
+
+}
+
+.login-form {
+display: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  margin-left:100px;
+  padding:10px;
+}
+
+.signup-form {
+display: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  margin-left:100px;
+  padding:10px;
+}
+
+.login-form h2, .signup-form h2 {
+  color: #696763;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  margin-left:20px;
+  padding-left:20px;
+  text-align:center;
+}
+
+
+.login-form form input, .signup-form form input {
+  background:white;
+  border: medium none;
+  color: #111;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 50%;
+   
+}
+
+.login-form form span{
+  line-height: 25px;
+}
+
+.login-form form span input {
+  width: 15px;
+  float: left;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.login-form form button {
+  margin-top: 23px;
+}
+
+.login-form form button, .signup-form form button {
+  background: #45B649;
+  border: medium none;
+  border-radius: 0;
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  padding: 6px 20px;
+  margin: 10px;
+    margin-left:0px;
+}
+
+.login-form label{
+
+}
+
+
+.login-form label input {
+  border: medium none;
+  display: inline-block;
+  height: 0;
+  margin-bottom: 0;
+  outline: medium none;
+  padding-left: 0;
+}
+
+
+.or{
+	background: #45B649;
+	border-radius: 40px;
+	color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 75px;
+	text-align: center;
+	width: 50px;
+	display: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  margin-left:100px;
+  padding:10px;
+}
+
+
+
 /*.pagination {
 	float: right;
 	margin: 0 0 5px;
