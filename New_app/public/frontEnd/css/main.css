@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-.btn:hover, 
+.btn:hover,
 .btn:focus{
   outline: none;
   box-shadow: none;
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #126919;
 }
 
-.btn-primary:hover, 
+.btn-primary:hover,
 .btn-primary:focus{
   color: #fff;
   background-color: #39eb39;
@@ -150,7 +150,7 @@ a#scrollUp i{
   padding-bottom: 5px;
   padding-top: 0px;
 /*  background-image:  url(../images/home/greenw.png);*/
- 
+
 
 }
 .logo{
@@ -158,15 +158,15 @@ a#scrollUp i{
     height: auto;
     display: flex;
     margin: 5px;
-    
-    
-     
+
+
+
 }
 
 .header-middle .container .row .col-sm-8 {
     padding-right: 0;
     padding-top: 5px;
-  
+
 }
 
 
@@ -213,8 +213,8 @@ a#scrollUp i{
     border-radius: 25px;
     background:white;
     margin-left: 2px;
-    
-    
+
+
 }
 
 
@@ -264,7 +264,7 @@ a#scrollUp i{
 }
 
 .search_box input {
-  background: white;   
+  background: white;
   border: medium none;
   border-radius:  50px;
   color: black;
@@ -284,7 +284,7 @@ a#scrollUp i{
 
 /*  Dropdown menu*/
 
-.navbar-header 
+.navbar-header
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -337,7 +337,7 @@ ul.sub-menu {
 }
 
 .fa-angle-down{
-  padding-left: 5px; 
+  padding-left: 5px;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -353,7 +353,7 @@ ul.sub-menu {
     transform: translateY(0);
   }
 }
-  
+
 /*************************
 *******Footer CSS******
 **************************/
@@ -430,7 +430,7 @@ ul.sub-menu {
   position: relative;
   color: black;
   font-size: 20px;
-    
+
 }
 
 .fa-facebook:hover {
@@ -519,7 +519,7 @@ ul.sub-menu {
   font-size: 20px;
 }
 
-.searchform  button:hover, 
+.searchform  button:hover,
 .searchform  button:focus{
 	background-color:#45B649;
 }
@@ -637,11 +637,11 @@ ul.sub-menu {
 
 .right {
   right: 0;
-    
+
 }
 .left-side{
     background-color: #F6FBE1;
-  
+
 }
 .category-products {
   border: 5px solid #F7F7F0;
@@ -666,9 +666,9 @@ ul.sub-menu {
     padding: 10px;
     background-color: white;
     text-align: center;
-   
-   
-   
+
+
+
 }
 
 
@@ -696,7 +696,7 @@ ul.sub-menu {
 	left: 50%;
 	margin-left: -65px;
     background-color:white;
-    
+
 }
 
 h2.title:before{
@@ -712,7 +712,7 @@ h2.title:before{
 }
 
 .category-products .panel {
-	 
+
 	border: 0px;
 	border-radius: 0px;
 	box-shadow:none;
@@ -725,7 +725,7 @@ h2.title:before{
   border: 0 none;
   color: #FFFFFF;
   padding: 5px 20px;
-    
+
 }
 
 .category-products .panel-default .panel-heading .panel-title a {
@@ -848,7 +848,7 @@ h2.title {
   color: #2F811D;
   background-color:white;
   border: 30px;
-  border-radius:  50px; 
+  border-radius:  50px;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold;
@@ -914,7 +914,7 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  
+
 }
 
 .single-products:hover .product-overlay {
@@ -1475,7 +1475,7 @@ h2.title {
   outline: medium none;
   padding-left: 10px;
   width: 100%;
-   
+
 }
 
 .login-form form span{
@@ -1576,7 +1576,7 @@ h2.title {
 #cart_items .cart_info {
   border: 1px solid #E6E4DF;
   margin-bottom: 50px;
-   margin-top: 10px;  
+   margin-top: 10px;
 }
 
 
@@ -1664,7 +1664,7 @@ h2.title {
   font-size: 16px;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-  
+
 }
 
 
@@ -1821,7 +1821,7 @@ h2.title {
   box-shadow: 5px 5px 18px #888888;
 }
 .billing-form{
-    margin-top: 15px;  
+    margin-top: 15px;
     margin-left:70px;
     margin-bottom:10px;
 }
@@ -1908,8 +1908,8 @@ h2.title {
 
 
 
-.shopper-info p, 
-.bill-to p, 
+.shopper-info p,
+.bill-to p,
 .order-message p {
   color: #696763;
   font-size: 20px;
@@ -1932,9 +1932,9 @@ h2.title {
 }
 
 
-.shopper-info > form > input, 
-.form-two > form > select, 
-.form-two > form > input, 
+.shopper-info > form > input,
+.form-two > form > select,
+.form-two > form > input,
 .form-one > form > input {
   background:#F0F0E9;
   border: 0 none;
@@ -1946,7 +1946,7 @@ h2.title {
 
 .form-two > form > select {
   padding:10px 5px
-  
+
 }
 
 .form-two {
@@ -1990,27 +1990,27 @@ h2.title {
   margin-right: 30px;
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result {
   margin-bottom: 10px;
   margin-top: 35px;
   color: #696763
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result tr {
   border-bottom: 0
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result span {
   color: #45B649;
   font-weight: 700;
   font-size: 16px
 }
 
-#cart_items .cart_info 
-.table.table-condensed.total-result 
+#cart_items .cart_info
+.table.table-condensed.total-result
 .shipping-cost {
   border-bottom: 1px solid #F7F7F0;
 }
@@ -2024,7 +2024,7 @@ h2.title {
   margin-bottom: 70px
 }
 
-.contact-info .heading, 
+.contact-info .heading,
 .contact-form .heading {
   text-transform: capitalize;
 }
@@ -2033,7 +2033,7 @@ h2.title {
   margin-bottom: 20px;
 }
 
-#contact-page 
+#contact-page
 .form-control::-moz-placeholder {
   color: #8D8D8D;
 }
@@ -2061,7 +2061,7 @@ h2.title {
 }
 
 
-#contact-page .form-control:focus, 
+#contact-page .form-control:focus,
 #contact-page .form-control:hover {
   box-shadow: inherit;
   border-color: #FDB45E;
@@ -2093,7 +2093,7 @@ h2.title {
 /* My profile****************** */
 
 .profile {
- 
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2120,19 +2120,19 @@ h2.title {
     padding-bottom: 2px;
     padding-top: 3px;
     background-color:white ;
-     box-shadow: 0px 0px 5px #888888; 
+     box-shadow: 0px 0px 5px #888888;
      margin-top:0px;
      margin-bottom:3px;
      border: 0 solid white;
      border-radius:50px;
-    
+
 }
 .mb-0{
     font-weight: bold;
 }
 
 .col-sm-9{
-    margin-top: 5px; 
+    margin-top: 5px;
     font-weight: bold;
 }
 .mt-3{
@@ -2143,7 +2143,7 @@ h2.title {
 /*Contact********************************/
 
 .contact {
- 
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2177,7 +2177,7 @@ h2.title {
 }
 /*About us*******************/
 .about{
- 
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2196,7 +2196,7 @@ h2.title {
   padding-bottom: 10px;
 }
 .mem{
-   
+
     box-sizing: inherit;
     box-shadow: 5px 2px 5px #888888;
     padding-top: 10px;
@@ -2205,12 +2205,12 @@ h2.title {
     padding-bottom: 10px;
     background-color: #F3FBF7;
     border: 5px solid  #F3FBF7;
-  
+
 }
 .join-us{
     margin-top: 150px;
     margin-left: 150px;
-    
+
 }
 /*login-seller page CSS********************************/
 .sell{
@@ -2229,7 +2229,7 @@ h2.title {
 }
 
 .login-seller{
- 
+
 }
 
 .signup-seller {
@@ -2258,7 +2258,7 @@ h2.title {
   outline: medium none;
   padding-left: 10px;
   width: 100%;
-   
+
 }
 
 .login-seller form span{
@@ -2332,4 +2332,11 @@ h2.title {
 }
 .tpoics{
 	text-align:center;
+}
+
+.pagination-area-numbered{
+    position:relative;
+    left: -50%;
+    float:right;
+    width:auto;
 }
