@@ -5,7 +5,7 @@
                 <div class="col-sm-6">
                     <div class="companyinfo text-center">
                         <h2><span>E</span>Mart</h2>
-                        <p>We provide the best platform for Agricultural Products in Sri Lanka </p>
+                        <p>Best Platform for Trading Agricultural Products </p>
                     </div>
                 </div>
                 <div class="col-sm-6 ">
@@ -23,7 +23,7 @@
         </div>
     </div>
 
- 
+
 
     <div class="footer-bottom">
         <div class="container">
