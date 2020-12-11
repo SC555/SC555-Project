@@ -7,12 +7,24 @@
     
 		<div class="order">
              <div class="widget-box">
+
                     <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
                         <legend><b>History of my previous Orders</b></legend>
-                        </div>
-					<div class="widget-content nopadding">
+                     </div>
+
+
+					<div class="widget-content nopadding" >
+
+                    
 						<table class="table table-striped">
                                 <thead id="topics" >
+                                 @if(count($orders) == 0)
+                                             <tbody>
+                                              <tr>
+                                              <h3 class="cart_h3"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; You have not made any previous orders <h3>
+                                              </tr> 
+                                          </tbody>
+                                 @else 
                                      <tr>
                                                 <th>Order id</th>
                                                 <th>Shipping Address</th>
@@ -24,7 +36,10 @@
                                                 <th>payment Method</th>
                                                 <th>Grand Total</th>
                                                 <th>Date</th>
-                                            </thead>
+                                            </tr>
+                                </thead>
+                                   
+                                         
                                             <tbody>
                                                 @foreach($orders as $order)
                                                 
@@ -42,10 +57,15 @@
                                                         
                                                     </tr>
                                                 @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                               </div>                 
-							</div>
+                                            </tbody> 
+                                     @endif  
+                        </table>
+                               
+
+                       
 						</div>  
+                    	</div>  
+                        </div>  
+                        </div>  
+                             
 @endsection
