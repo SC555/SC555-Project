@@ -24,7 +24,7 @@ class UsersController extends Controller
         $input_data=$request->all();
         $input_data['password']=Hash::make($input_data['password']);
         User::create($input_data);
-        return back()->with('message','Registered already!');
+        return back()->with('message','Registration Successful!');
     }
     public function login(Request $request){
         $input_data=$request->all();
@@ -48,7 +48,7 @@ class UsersController extends Controller
         return view('users.account',compact('countries','user_login'));
     }
 
-    
+
     public function updateprofile(Request $request,$id){
         $this->validate($request,[
             'address'=>'required',
@@ -64,7 +64,7 @@ class UsersController extends Controller
             'country'=>$input_data['country'],
             'pincode'=>$input_data['pincode'],
             'mobile'=>$input_data['mobile']]);
-        return back()->with('message','Update Profile already!');
+        return back()->with('message','Profile Updated Successfully!');
 
     }
     public function updatepassword(Request $request,$id){
@@ -90,29 +90,29 @@ class UsersController extends Controller
         return view('backEnd.userview.index',compact('menu_active','users','i'));
 
     }
-    
+
     public function edit($id){
 
         $menu_active=6;
         $edit_user=User::findOrFail($id);
-    
+
         return view('backEnd.userview.edit',compact('edit_user','menu_active'));
 
     }
 
-    
+
     public function updateAdmin(Request $request, $id)
     {
         $update_user=User::findOrFail($id);
         $this->validate($request,[
-           
+
         ]);
         $input_data=$request->all();
         if(empty($input_data['status'])){
             $input_data['status']=0;
         }
         $update_user->update($input_data);
-        return redirect()->route('admin.user.index')->with('message','Edit User successfully!');
+        return redirect()->route('admin.user.index')->with('message','Edit User Successful!');
     }
 
     public function destroy($id)
@@ -126,7 +126,7 @@ class UsersController extends Controller
     public function vendorAll(){
         $menu_active=6;
         $i=0;
-        
+
         $users = DB::table('users')
                     ->where('admin', 2)
                     ->orderBy('created_at','desc')->get();
@@ -134,6 +134,6 @@ class UsersController extends Controller
         return view('backEnd.userview.vendor_list',compact('menu_active','users','i'));
     }
 
-   
+
 
 }
