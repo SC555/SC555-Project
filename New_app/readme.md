@@ -1,5 +1,5 @@
 
-## Web based shopping Solution for  Exporting   Agricultural Minor crops in Srilanka
+## Web based Trading Platform for Agricultural Products
 
 The main objective of this project is to create an ecommerce solution which will have a clean and modern design, feature rich while covering the requirements of trading agricultural products from Sri Lanka. The application allows the customer to shop virtually using the Internet and allow customers to order the Export Agricultural items and sellers to provide a platform to sell their products.
 ## Features
