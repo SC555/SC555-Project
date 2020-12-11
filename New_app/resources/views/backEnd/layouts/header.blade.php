@@ -1,24 +1,28 @@
 <!--Header-part-->
 <div id="header">
-   <h1><a href="dashboard.html">E-MART</a></h1>
+<h1><a href="{{url('/admin')}}">E Mart</a></h1>
+    <p> Admin </p>
 </div>
 <!--close-Header-part-->
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
-    <li class=""><a href="#"><span class="text"> Hello {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></span></li>
+    
         
     @if(Session::has('vendorUser')) 
     <li class=""></li>
+   
+    <li><a href="{{ url('/logout_vendor') }}"><i class="icon icon-signout"></i> Logout </a></li>
+
     @else
     <li class=""><a title="" href="{{url('/admin/settings')}}"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    @endif
+  
     
         <li class="">
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                <i class="icon icon-share-alt"></i>{{ __('Logout') }}
+               <i class="icon icon-signout"></i>{{ __('Logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -26,6 +30,12 @@
             </form>
 
         </li>
+     @endif
+     <li class=""><a title="" href=""><i class="icon-user"></i> <span class="text"></span></a></li>
+    <li class=""><a title="" href=""><i class="icon-bell"></i><span class="text"></span></a></li>
+    <li class=""><a href="#"><span class="text"> Hello {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></span></li>
+
+
     </ul>
 </div>
 <!--close-top-Header-menu-->

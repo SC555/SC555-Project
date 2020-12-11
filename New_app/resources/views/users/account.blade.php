@@ -9,7 +9,7 @@
                 {{Session::get('message')}}
             </div>
         @endif
-		 <div class="row">
+        <div class="row">
              <div class="profile">   <!--  my profile -->
                <div class="card-body">
                  <div class="col-md-4 "> 
@@ -60,7 +60,7 @@
                     <form action="{{url('/update-profile',$user_login->id)}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         {{method_field('PUT')}}
-                        <legend>Account Profile</legend>
+                        <legend>Update Your Profile</legend>
                         <div class="form-group {{$errors->has('name')?'has-error':''}}">
                             <input type="text" class="form-control" name="name" id="name" value="{{$user_login->name}}" placeholder="Name">
                             <span class="text-danger">{{$errors->first('name')}}</span>
@@ -96,9 +96,7 @@
                     </form>
                 </div><!--/login form-->
             </div>
-            <div class="col-sm-1">
-                <h2 class="or">OR</h2>
-            </div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
                     <form action="{{url('/update-password',$user_login->id)}}" method="post" class="form-horizontal">

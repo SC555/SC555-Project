@@ -2,7 +2,7 @@
 @extends('backEnd.layouts.master')
 @section('title','Dashboard')
 @section('content')
-<div id="breadcrumb"> <a href="" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('user.index')}}" class="current">Sellers List</a></div>
+<div id="breadcrumb"> <a href="" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="" class="current">My profile</a></div>
     <div class="container-fluid">
     
         @if(Session::has('message'))
@@ -10,27 +10,10 @@
                 {{Session::get('message')}}
             </div>
         @endif
-   <div class="row">
-             <div class="profile">   <!--  my profile -->
-               <div class="card-body">
-                 <div class="col-md-4 "> 
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user" class="rounded-circle" width="150">
-                    <div class="mt-3">
-                      <h4>{{$user_login->name}}</h4>
-                      <p class="text-secondary"> Address: {{$user_login->address}}, {{$user_login->city}}, {{$user_login->state}}</p>
-                      <p class="text-muted font-size-sm"> ID:{{$user_login->id}}</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-           </div>
         <div class="row">
-           
+            <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
-                    <form action="{{url('/update-profile',$user_login->id)}}" method="post" class="form-horizontal">
+                    <form action="{{url('/update_vendor_profile',$user_login->id)}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         {{method_field('PUT')}}
                         <legend>Account Profile</legend>
@@ -47,13 +30,10 @@
                             <span class="text-danger">{{$errors->first('city')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('state')?'has-error':''}}">
-                            <input type="text" class="form-control" name="state" value="{{$user_login->state}}" id="state" placeholder="State">
+                            <input type="text" class="form-control" name="state" value="{{$user_login->state}}" id="state" placeholder="province">
                             <span class="text-danger">{{$errors->first('state')}}</span>
                         </div>
-                        <div class="form-group {{$errors->has('pincode')?'has-error':''}}">
-                            <input type="text" class="form-control" name="pincode" value="{{$user_login->pincode}}" id="pincode" placeholder="Pincode">
-                            <span class="text-danger">{{$errors->first('pincode')}}</span>
-                        </div>
+                      
                         <div class="form-group {{$errors->has('mobile')?'has-error':''}}">
                             <input type="text" class="form-control" name="mobile" value="{{$user_login->mobile}}" id="mobile" placeholder="Mobile">
                             <span class="text-danger">{{$errors->first('mobile')}}</span>
@@ -61,17 +41,13 @@
                         <button type="submit" class="btn btn-primary" style="float: right;">Update Profile</button>
                     </form>
                 </div><!--/login form-->
-       
-			</div>
-			     <!--   <div class="row">
+            </div>
             <div class="col-sm-1">
                 <h2 class="or">OR</h2>
             </div>
-			</div>-->
-			        <div class="row">
-        
+            <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
-                    <form action="{{url('/update-password',$user_login->id)}}" method="post" class="form-horizontal">
+                    <form action="{{url('/update_vendor_password',$user_login->id)}}" method="post" class="form-horizontal">
                         <legend>Update New Password</legend>
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         {{method_field('PUT')}}
@@ -93,10 +69,11 @@
                     </form>
                 </div><!--/sign up form-->
             </div>
-    
+        </div>
     </div>
 
 </div>
+        
 @endsection
 
 

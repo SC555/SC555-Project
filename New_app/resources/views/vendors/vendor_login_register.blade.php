@@ -14,8 +14,8 @@
 
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
-                <div class="login-form"><!--login form-->
-                     <h2>Login as a <b>Vendor</b></h2>
+                <div class="login-seller"><!--login form-->
+                    <h2>Login as a <b>Vendor</b></h2>
                     <form action="{{url('/login_vendor')}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="email" placeholder="Email" name="email"/>
@@ -28,11 +28,11 @@
                     </form>
                 </div><!--/login form-->
             </div>
-             <div class="col-sm-1">
+          <div class="col-sm-1">
                 <h2 class="orr">OR</h2>
             </div>
             <div class="col-sm-4">
-                <div class="signup-form"><!--sign up form-->
+                <div class="signup-seller"><!--sign up form-->
                     <h2>New <b>Vendor</b> Signup!</h2>
                     <form action="{{url('/register_vendor')}}" method="post" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -48,12 +48,10 @@
                         <input type="text" placeholder="City" name="city" value="{{old('city')}}"/>
                         <span class="text-danger">{{$errors->first('city')}}</span>
 
-                        <input type="text" placeholder="State" name="state" value="{{old('state')}}"/>
+                        <input type="text" placeholder="Province" name="state" value="{{old('state')}}"/>
                         <span class="text-danger">{{$errors->first('state')}}</span>
                         
-                        <input type="text" placeholder="Pin code" name="pincode" value="{{old('pincode')}}"/>
-                        <span class="text-danger">{{$errors->first('pincode')}}</span>
-
+                        
                         <input type="text" placeholder="mobile" name="	mobile" value="{{old('mobile')}}"/>
                         <span class="text-danger">{{$errors->first('mobile')}}</span>
 

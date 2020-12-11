@@ -14,7 +14,7 @@
 <div id="loginbox">
     <form id="loginform" class="form-vertical" method="POST" action="{{ route('login') }}">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
-       
+       {{--<div class="control-group normal_text"> <h3><img src="{{asset('img/logo.png')}}" alt="Logo" /></h3></div>--}} 
        <div class="control-group normal_text"> <h3>E-MART</h3></div>
         <div class="control-group">
             <div class="controls">
@@ -35,7 +35,7 @@
                     <span class="add-on bg_lh"><i class="icon-lock"></i></span>
                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     @if ($errors->has('password'))
-                        <span class="invalid-feedback" role="alert">
+                       <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif

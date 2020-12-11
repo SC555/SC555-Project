@@ -8,20 +8,20 @@
                     <div class="logo pull-left">
                         <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt="" height="100" /></a>
                     </div>
-
+                 
                 </div>
-                <div class="col-sm-8">
-
+                <div class="col-sm-8">  
+                
                     <div class="shop-menu pull-right">
-
+                   
                         <ul class="nav navbar-nav">
                             <li><a href="{{url('/viewcart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             @if(Auth::check())
                                 <li><a href="{{url('/myaccount')}}"><i class="fa fa-user"></i> My Account</a></li>
-                                 <li><a href="{{url('/myhistory')}}"><i class="fa fa-list" aria-hidden="true"></i>My Order History</a></li>
-
-
-                            </li>
+                                 <li><a href="{{url('/myhistory')}}"><i class="fa fa-book" aria-hidden="true"></i></i> My Order History</a></li>
+                              
+                          
+                            </li> 
                               <li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout </a></li>
                             @else
                                 <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Login</a></li>
@@ -51,7 +51,7 @@
                             <li><a href="{{url('/list-products')}}">Shop</a></li>
                             <li class="dropdown"><a href="#">Join with Us<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-
+                                   
                                     <li><a href="{{url('/vendor_login')}}">Join as a Seller <i class="fa fa-user" ></i> </a></li>
                                     <li><a href="{{url('/myaccount')}}">Join as a Buyer <i class="fa fa-user" ></i></a></li>
                                 </ul>
@@ -62,22 +62,11 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-{{--                <div class="search_box pull-right">--}}
-{{--                        <form  type="get" action ="{{url('search')}}">--}}
-{{--                        <input type="search" name="query" placeholder="Search"/>--}}
-{{--                     </form>--}}
-{{--                </div>--}}
-
-                    <form action="{{ url ('/search')}}" method="GET" role="search">
-                        {{ csrf_field() }}
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="query"
-                                   placeholder="Search"> <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button></span>
-                        </div>
-                    </form>
+                <div class="search_box pull-right">
+                        <form  type="get" action ="{{url('search')}}">
+                        <input type="search" name="query" placeholder="Search"/>
+                     </form>
+                    </div>
 
                 </div>
             </div>

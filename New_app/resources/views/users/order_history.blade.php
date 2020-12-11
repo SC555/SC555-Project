@@ -4,31 +4,16 @@
 @endsection
 @section('content')
 <div class="container">
- 
- 
-        @if(Session::has('message'))
-                <div class="alert alert-success text-center" role="alert">
-                    <strong></strong> {{Session::get('message')}}
-                </div>
-        @endif
-     
-        <div class="row">
-          
-                                  
-
-
-                                    <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                                        <legend>History of my previous Orders</legend>
-                                    </div>
-
-
-                                    <div class="widget-content nopadding">
-
-                                    
-
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
+    
+		<div class="order">
+             <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+                        <legend><b>History of my previous Orders</b></legend>
+                        </div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped">
+                                <thead id="topics" >
+                                     <tr>
                                                 <th>Order id</th>
                                                 <th>Shipping Address</th>
                                                 <th>City</th>
@@ -41,8 +26,6 @@
                                                 <th>Date</th>
                                             </thead>
                                             <tbody>
-                                           
-
                                                 @foreach($orders as $order)
                                                 
                                                     <tr class="gradeC">
@@ -59,13 +42,10 @@
                                                         
                                                     </tr>
                                                 @endforeach
-                                           
                                             </tbody>
-                                        </table>   
-                                   
+                                        </table>
                                     </div>
-                                   
-         </div>                 
- 
-  </div>  
+                               </div>                 
+							</div>
+						</div>  
 @endsection
