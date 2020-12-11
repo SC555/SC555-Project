@@ -14,10 +14,15 @@ class CartController extends Controller
         $session_id=Session::get('session_id');
         $cart_datas=Cart_model::where('session_id',$session_id)->get();
         $total_price=0;
-        foreach ($cart_datas as $cart_data){
-            $total_price+=$cart_data->price*$cart_data->quantity;
-        }
-        return view('frontEnd.cart',compact('cart_datas','total_price'));
+
+      
+            foreach ($cart_datas as $cart_data){
+                $total_price+=$cart_data->price*$cart_data->quantity;
+            }
+            return view('frontEnd.cart',compact('cart_datas','total_price'));
+
+       
+        
     }
 
     public function addToCart(Request $request){
@@ -26,32 +31,47 @@ class CartController extends Controller
         Session::forget('coupon_code');
         if($inputToCart['size']==""){
             return back()->with('message','Please select Size');
-        }else{
-            $stockAvailable=DB::table('product_att')->select('stock','sku')->where(['products_id'=>$inputToCart['products_id'],
-                'price'=>$inputToCart['price']])->first();
-            if($stockAvailable->stock>=$inputToCart['quantity']){
-                $inputToCart['user_email']='weshare@gmail.com';
-                $session_id=Session::get('session_id');
-                if(empty($session_id)){
-                    $session_id=str_random(40);
-                    Session::put('session_id',$session_id);
-                }
-                $inputToCart['session_id']=$session_id;
-                $sizeAtrr=explode("-",$inputToCart['size']);
-                $inputToCart['size']=$sizeAtrr[1];
-                $inputToCart['product_code']=$stockAvailable->sku;
-                $count_duplicateItems=Cart_model::where(['products_id'=>$inputToCart['products_id'],
-                    'product_color'=>$inputToCart['product_color'],
-                    'size'=>$inputToCart['size']])->count();
-                if($count_duplicateItems>0){
-                    return back()->with('message','This Item Added already');
+        }
+        
+        else{
+
+                $stockAvailable=DB::table('product_att')->select('stock','sku')->where(['products_id'=>$inputToCart['products_id'],
+                    'price'=>$inputToCart['price']])->first();
+            
+
+                if($stockAvailable->stock >= $inputToCart['quantity']){
+
+                    $inputToCart['user_email']='shanikauwu@gmail.com';
+                    //$inputToCart['user_email']=Session::get('email');
+                    $session_id=Session::get('session_id'); 
+                
+                    if(empty($session_id)){
+                        $session_id=str_random(40);
+                        Session::put('session_id',$session_id); 
+                    
+                    } 
+                
+                    $inputToCart['session_id']=$session_id; 
+                    
+                    $sizeAtrr=explode("-",$inputToCart['size']);
+                    $inputToCart['size']=$sizeAtrr[1];
+                  
+                    $inputToCart['product_code']=$stockAvailable->sku; 
+                    
+                    $count_duplicateItems=Cart_model::where(['products_id'=>$inputToCart['products_id'],
+                        'product_color'=>$inputToCart['product_color'],
+                        'size'=>$inputToCart['size']])->count();
+                      
+                    if($count_duplicateItems==0){ 
+                       
+                        return back()->with('message','This Item  is Added already');  
+                    }else{
+                        Cart_model::create($inputToCart); 
+                        return back()->with('message','item is Added To Cart successfully');dd($count_duplicateItems);
+                    }
                 }else{
-                    Cart_model::create($inputToCart);
-                    return back()->with('message','Add To Cart Already');
+                    return back()->with('message','Stock is not Available!');
                 }
-            }else{
-                return back()->with('message','Stock is not Available!');
-            }
         }
     }
     public function deleteItem($id=null){

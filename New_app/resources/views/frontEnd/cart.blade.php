@@ -3,6 +3,9 @@
 @section('slider')
 @endsection
 @section('content')
+ 
+
+  
     <section id="cart_items">
         <div class="container">
             @if(Session::has('message'))
@@ -10,7 +13,12 @@
                     {{Session::get('message')}}
                 </div>
             @endif
+            
+           
             <div class="table-responsive cart_info">
+
+            
+            
                 <table class="table table-condensed">
                     <thead>
                     <tr class="cart_menu">
@@ -22,7 +30,17 @@
                         <td></td>
                     </tr>
                     </thead>
+                 @if(count($cart_datas)== 0)
+                   
+                   
+                        <tbody>
+                        <tr>
+                          <td colspan="5"> <h3 class="cart_h3"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;  Your cart is empty <h3></td></tr>
+                        </tbody>
+                @else
                     <tbody>
+                    
+                
                         @foreach($cart_datas as $cart_data)
                             <?php
                                 $image_products=DB::table('products')->select('image')->where('id',$cart_data->products_id)->get();
@@ -58,7 +76,11 @@
                             </tr>
                         @endforeach
                     </tbody>
+
+                 @endif 
                 </table>
+
+               
             </div>
         </div>
     </section> <!--/#cart_items-->
@@ -92,5 +114,6 @@
                 </div>
             </div>
         </div>
-    </section><!--/#do_action-->
+    </section>
+  
 @endsection
