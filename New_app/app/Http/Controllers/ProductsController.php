@@ -227,6 +227,7 @@ class ProductsController extends Controller
     public function search(){
         $Search=$_GET['query'];
         $products = Products_model ::where('p_name', 'LIKE', '%'.$Search.'%')->with('category')->get();
+        $products=Products_model::where('p_name', 'LIKE', '%'.$Search.'%')->with('category')->paginate(6);
          return view('frontEnd.index',compact('products'));  
       
     }
